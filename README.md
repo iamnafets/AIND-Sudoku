@@ -1,4 +1,4 @@
-# Artificial Intelligence Nanodegree
+# Artificial Intelligence Nanodegree (Stefan Mai)
 ## Introductory Project: Diagonal Sudoku Solver
 
 # Question 1 (Naked Twins)
