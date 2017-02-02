@@ -7,6 +7,12 @@ after_naked_twins = {'G7': '6', 'G6': '3', 'G5': '2', 'G4': '9', 'G3': '1', 'G2'
 
 class TestNakedTwins(unittest.TestCase):
     def test_naked_twins(self):
+        print("input")
+        solution.display(before_naked_twins)
+        print("expected")
+        solution.display(after_naked_twins)
+        print("actual")
+        solution.display(solution.naked_twins(before_naked_twins))
         self.assertEqual(solution.naked_twins(before_naked_twins), after_naked_twins)
 
 
