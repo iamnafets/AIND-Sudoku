@@ -108,7 +108,7 @@ def reduce_puzzle(values,diag):
     return values
 
 def solve(grid):
-    result, board = search(grid,True)
+    result, board = search(grid_values(grid),True)
     return board
 
 
@@ -145,15 +145,21 @@ def search(values,diag):
     
     return False, None
 
-#diag_sudoku_grid = '2.............62....1....7...6..8...3...9...7...6..4...4....8....52.............3'
-#parsed_grid = grid_values(diag_sudoku_grid)
-#display(parsed_grid)
-#print(solve(parsed_grid))
-
 try:
     from visualize import visualize_assignments
     visualize_assignments(assignments)
 except:
     print('We could not visualize your board due to a pygame issue. Not a problem! It is not a requirement.')
 
+if __name__ == '__main__':
+    diag_sudoku_grid = '2.............62....1....7...6..8...3...9...7...6..4...4....8....52.............3'
+    display(solve(diag_sudoku_grid))
 
+    try:
+        from visualize import visualize_assignments
+        visualize_assignments(assignments)
+
+    except SystemExit:
+        pass
+    except:
+        print('We could not visualize your board due to a pygame issue. Not a problem! It is not a requirement.')
