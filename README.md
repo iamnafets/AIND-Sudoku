@@ -3,10 +3,11 @@
 
 # Question 1 (Naked Twins)
 Q: How do we use constraint propagation to solve the naked twins problem?
-A: <INSERT HERE>
+A: With a brute force approach, we have to try every possible option to get to an answer. We are using constraint propagation to trim unnecessary paths from the search space. With a significantly lessened search space, we can solve the problem faster (or tractably).
 
 # Question 2 (Diagonal Sudoku)
 Q: How do we use constraint propagation to solve the diagonal sudoku problem?
+For the diagonal sudoku problem, we have less possible options for each box. The diagonals add an additional constraint which minimizes the search area.
 
 ### Install
 
