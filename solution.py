@@ -32,6 +32,10 @@ def assign_value(values, box, value):
     return values
 
 def naked_twins(values):
+    """
+    This function finds instances where N boxes have the same possible N values.
+    In these instances, no other box can have these N values, so we can eliminate them.
+    """
     unitlist = standardunitlist
     for unit in unitlist:
         twins = Counter([values[peerkey] for peerkey in unit])
@@ -64,6 +68,9 @@ def display(values):
     return
 
 def eliminate(values,diag):
+    """
+    Eliminates values from peer boxes when a given box only has 1 possible value
+    """
     peers = standardpeers
     if diag:
         peers = diagpeers
@@ -74,6 +81,9 @@ def eliminate(values,diag):
     return values
 
 def only_choice(values,diag):
+    """
+    If only 1 box can take a given value, that box must be the owner of that value
+    """
     unitlist = standardunitlist
     if diag:
         unitlist = diagunitlist
@@ -85,6 +95,9 @@ def only_choice(values,diag):
     return values
 
 def reduce_puzzle(values,diag):
+    """
+    Continue to iteratively eliminate possibilities and set values until we stall or finish
+    """
     solved_values = [box for box in values.keys() if len(values[box]) == 1]
     stalled = False
     while not stalled:
